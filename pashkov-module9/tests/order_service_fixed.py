@@ -37,13 +37,10 @@ class OrderService:
         self.gateway = gateway
 
     def pay(self, order_id: int) -> str:
-        # ИСПРАВЛЕНО: правильное имя метода
         order = self.repo.get(order_id)
         
-        # ИСПРАВЛЕНО: правильные аргументы
         tx_id = self.gateway.charge(order.amount, currency="USD")
         
-        # ИСПРАВЛЕНО: правильный конструктор
         audit = AuditClient(endpoint="https://audit.local", token="secret")
         audit.write("payment_success", {"order_id": order.id, "tx_id": tx_id})
         

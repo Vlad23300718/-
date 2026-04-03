@@ -1,4 +1,3 @@
-# tests/test_demo_autospec_vs_plain.py
 import unittest
 from unittest.mock import Mock, create_autospec
 import sys
@@ -15,11 +14,10 @@ class TestAutospecVsPlain(unittest.TestCase):
     def test_plain_mock_too_forgiving(self):
         """Plain Mock не ловит ошибки"""
         gateway = Mock()
-        # Такого метода нет в реальном API
         gateway.non_existent_method.return_value = "fake"
         
         result = gateway.non_existent_method("arg")
-        self.assertEqual(result, "fake")  # Проходит!
+        self.assertEqual(result, "fake")  
         print("\n✅ Plain Mock позволил вызвать несуществующий метод")
     
     def test_autospec_catches_wrong_method(self):

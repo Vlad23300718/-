@@ -1,4 +1,3 @@
-# order_service.py
 from dataclasses import dataclass
 
 
@@ -37,13 +36,10 @@ class OrderService:
         self.gateway = gateway
 
     def pay(self, order_id: int) -> str:
-        # ОШИБКА 1: старое имя метода (должен быть get)
         order = self.repo.find_by_id(order_id)
         
-        # ОШИБКА 2: неправильные keyword-аргументы
         tx_id = self.gateway.charge(total=order.amount, curr="USD")
         
-        # ОШИБКА 3: неправильный конструктор (должен быть endpoint и token)
         audit = AuditClient("https://audit.local")
         audit.write("payment_success", {"order_id": order.id, "tx_id": tx_id})
         
