@@ -7,7 +7,6 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from order_service import OrderService, Order
 
-
 class TestOrderServicePlain(unittest.TestCase):
     """Этот тест будет зелёным, хотя код содержит 3 ошибки"""
     

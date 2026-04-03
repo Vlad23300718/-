@@ -7,7 +7,6 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from order_service_fixed import OrderRepo, PaymentGateway, AuditClient, OrderService, Order
 
-
 class TestOrderServiceFixed(unittest.TestCase):
     """Полноценный тест после исправления всех ошибок"""
     

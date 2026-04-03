@@ -44,6 +44,5 @@ class TestAutospecVsPlain(unittest.TestCase):
             gateway.charge(100, "USD", "extra_arg")
         print("\n✅ autospec поймал лишний аргумент")
 
-
 if __name__ == "__main__":
     unittest.main()

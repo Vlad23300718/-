@@ -7,7 +7,6 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from order_service import OrderRepo, PaymentGateway, AuditClient, OrderService, Order
 
-
 class TestOrderServiceAutospec(unittest.TestCase):
     """Этот тест покажет все 3 ошибки"""
     

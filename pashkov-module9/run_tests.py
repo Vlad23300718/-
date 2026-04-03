@@ -5,7 +5,6 @@ import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-
 def run_all_tests():
     print("=" * 60)
     print("ЗАПУСК ВСЕХ ТЕСТОВ")

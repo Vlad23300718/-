@@ -7,7 +7,6 @@ class Order:
     id: int
     amount: int
 
-
 class OrderRepo:
     """Репозиторий для работы с заказами"""
     def get(self, order_id: int) -> Order:
